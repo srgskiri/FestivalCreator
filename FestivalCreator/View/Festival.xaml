@@ -3,34 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:vm="clr-namespace:FestivalCreator.ViewModel"
+             xmlns:v="clr-namespace:FestivalCreator.View"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
             Height="527" Width="1016">
-    <UserControl.Resources>
-        <vm:FestivalVM x:Key="FestivalVM"/>
-    </UserControl.Resources>
-    
+
     <Grid Background="Bisque">
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="190" FontWeight="Bold" FontSize="42" FontFamily="Source Sans Pro"><Run Language="nl-be" Text="Festival"/></TextBlock>
-        <Calendar DisplayDate="{Binding Source={StaticResource FestivalVM}, Path=BeginDatum, Mode=TwoWay}" SelectedDate="{Binding Source={StaticResource FestivalVM}, Path=BeginDatum, Mode=TwoWay}" Name="calendr" HorizontalAlignment="Left" Margin="176,155,0,0" VerticalAlignment="Top" Height="166" Width="180" FontFamily="News Gothic" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="176,104,0,0" TextWrapping="Wrap" Text="{Binding Source={StaticResource FestivalVM}, Path=NaamFestival}" VerticalAlignment="Top" Width="180" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="21,103,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="138" Height="28" Text="Naam festival:&#xD;&#xA;" FontSize="22"/>
-        <TextBlock HorizontalAlignment="Left" Margin="33,155,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="116" Height="28" FontSize="22"><Run Language="nl-be" Text="Begin datum:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="21,348,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="138" Height="28" FontSize="22"><Run Language="nl-be" Text="Aantal dagen:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="176,348,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="44" FontSize="18" FontFamily="Ubuntu"/>
-        <Grid HorizontalAlignment="Left" Height="334" Margin="472,97,0,0" VerticalAlignment="Top" Width="534">
-            <ListBox HorizontalAlignment="Left" Height="163" Margin="2,63,0,0" VerticalAlignment="Top" Width="187" FontFamily="Ubuntu" FontSize="18"/>
-            <Button Content="Toevoegen" HorizontalAlignment="Left" Margin="55,296,0,0" VerticalAlignment="Top" Width="134" FontSize="18" FontFamily="Ubuntu" Height="22"/>
-            <RichTextBox HorizontalAlignment="Left" Height="163" Margin="222,63,0,0" VerticalAlignment="Top" Width="302" FontSize="16">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Language="nl-be" Text="Beschrijving komt hier."/>
-                        <LineBreak/>
-                        <Run Language="nl-be" Text="Bepaalde sfeer, de genres, unieke informatie (bv: gelegen in bos)"/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
+        <TextBlock Style="{StaticResource TitelStyle}" Text="Festival"/>
+        <TextBlock Style="{StaticResource TekstStyle}" Margin="21,103,0,0" Text="Naam festival:"/>
+        <TextBox Style="{StaticResource TekstboxStyle}" Text="{Binding FestivalObj.Naam}" Width="180" Margin="176,104,0,0" />
+        <TextBlock Style="{StaticResource TekstStyle}" Margin="33,155,0,0" Text="Begin datum:"/>
+        <Calendar DisplayDate="{Binding FestivalObj.BeginDatum}" SelectedDate="{Binding FestivalObj.BeginDatum, Mode=TwoWay}" Name="calendr" HorizontalAlignment="Left" Margin="176,155,0,0" VerticalAlignment="Top" Height="166" Width="180" FontFamily="News Gothic" FontSize="18"/>
+        <TextBlock Style="{StaticResource TekstStyle}" Margin="21,348,0,0" Text="Aantal dagen:"/>
+        <TextBox Style="{StaticResource TekstboxStyle}" Text="{Binding FestivalObj.AantalDagen}" Margin="176,348,0,0" Width="44"/>
+
+        <Grid HorizontalAlignment="Left" Height="334" Margin="425,87,0,0" VerticalAlignment="Top" Width="552">
+            <ListBox x:Name="lstPodia" ItemsSource="{Binding Podia}" SelectedItem="{Binding SelectedPodium}" DisplayMemberPath="Naam" HorizontalAlignment="Left" Height="163" Margin="2,63,0,0" VerticalAlignment="Top" Width="217" FontFamily="Ubuntu" FontSize="18"/>
+            <Button Style="{StaticResource ButtonStyle}" Content="Toevoegen" Command="{Binding AddPodiumCommand}" Margin="54,295,0,0" Width="135"/>
+            <TextBox Style="{StaticResource TekstboxStyle}" Text="{Binding SelectedPodium.Beschrijving}" Height="122" Margin="250,104,0,0" Width="302" FontSize="16"/>
+            <TextBox Style="{StaticResource TekstboxStyle}" Margin="391,63,0,0" Text="{Binding SelectedPodium.Naam}" Width="161"/>
+            <TextBlock Style="{StaticResource TitelStyle}" Margin="2,0,0,0" Height="49" Width="190" FontSize="35" Text="Podia"/>
+            <TextBox Style="{StaticResource TekstboxStyle}" Text="{Binding NaamNieuwePodium}" Margin="2,248,0,0" Width="217"/>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="472,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="49" Width="190" FontWeight="Bold" FontSize="35" FontFamily="Source Sans Pro"><Run Language="nl-be" Text="Podia"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="501,348,0,0" TextWrapping="Wrap" Text="Nieuwe podium" VerticalAlignment="Top" Width="161" FontSize="18" FontFamily="Ubuntu"/>
+
+        <Button Style="{StaticResource ButtonStyle}" Content="Opslaan" Command="{Binding SaveChangesCommand}" Margin="873,449,0,0" Width="100"/>
     </Grid>
+
 </UserControl>
