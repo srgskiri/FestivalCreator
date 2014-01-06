@@ -3,9 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
-            
+             Height="527" Width="1016">
+    <Grid Background="Bisque">
+        <TextBlock Text="Tickets" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="190" FontWeight="Bold" FontSize="42" FontFamily="Source Sans Pro"/>
+
+        <ListBox ItemsSource="{Binding TicketTypes}" SelectedItem="{Binding SelectedTicketType}" DisplayMemberPath="Naam" HorizontalAlignment="Left" Height="397" Margin="10,81,0,0" VerticalAlignment="Top" Width="258"/>
+        <TextBox Text="{Binding SelectedTicketType.Naam}" HorizontalAlignment="Left" Height="23" Margin="363,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="165"/>
+        <TextBox Text="{Binding SelectedTicketType.Prijs}" HorizontalAlignment="Left" Height="23" Margin="363,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
+        <TextBox Text="{Binding SelectedTicketType.AantalTickets}" HorizontalAlignment="Left" Height="23" Margin="363,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="76"/>
+
+        <Button Content="Toevoegen" Command="{Binding AddTicketTypeCommand}" HorizontalAlignment="Left" Margin="111,492,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Opslaan" Command="{Binding SaveTicketTypeChangesCommand}" HorizontalAlignment="Left" Margin="428,492,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="Verwijderen" Command="{Binding DeleteTicketTypeCommand}" HorizontalAlignment="Left" Margin="428,280,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <TextBox Text="{Binding ZoekString, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="23" Margin="834,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="142"/>
+        <ListBox ItemsSource="{Binding ZichtbareTickets}" SelectedItem="{Binding SelectedTicket}" DisplayMemberPath="PersoonInBezit" HorizontalAlignment="Left" Height="257" Margin="616,81,0,0" VerticalAlignment="Top" Width="360"/>
+        <TextBox Text="{Binding SelectedTicket.PersoonInBezit}" HorizontalAlignment="Left" Height="23" Margin="711,358,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="265"/>
+        <TextBox Text="{Binding SelectedTicket.PersoonInBezitEmail}" HorizontalAlignment="Left" Height="24" Margin="711,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265"/>
+        <TextBox Text="{Binding SelectedTicket.Aantal}" HorizontalAlignment="Left" Height="24" Margin="922,444,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"/>
+        <ComboBox ItemsSource="{Binding TicketTypes}" SelectedItem="{Binding SelectedTicket.TicketType}" HorizontalAlignment="Left" Margin="616,446,0,0" VerticalAlignment="Top" Width="204"/>
+        
+        <Button Command="{Binding AddTicketCommand}" Content="Toevoegen" HorizontalAlignment="Left" Margin="616,40,0,0" VerticalAlignment="Top" Width="117"/>
+        <Button Command="{Binding SaveTicketChangesCommand}" Content="Opslaan" HorizontalAlignment="Left" Margin="864,492,0,0" VerticalAlignment="Top" Width="112"/>
+        <Button Command="{Binding PrintTicketCommand}" Content="Print" HorizontalAlignment="Left" Margin="616,492,0,0" VerticalAlignment="Top" Width="112"/>
+
     </Grid>
 </UserControl>
