@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="GalaSoft.MvvmLight.WPF45, Version=4.1.24.16411, Culture=neutral, PublicKeyToken=eabbf6a5f5af5004, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\GalaSoft.MvvmLight.WPF45.dll</HintPath>
@@ -64,20 +65,41 @@
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\Festival.cs" />
     <Compile Include="Model\Genre.cs" />
+    <Compile Include="Model\IdToIndexConverter.cs" />
     <Compile Include="Model\LineUp.cs" />
     <Compile Include="Model\Podium.cs" />
     <Compile Include="Model\Ticket.cs" />
     <Compile Include="Model\TicketType.cs" />
     <Compile Include="ViewModel\ApplicationVM.cs" />
+    <Compile Include="ViewModel\BandFormVM.cs" />
     <Compile Include="ViewModel\BandsVM.cs" />
     <Compile Include="ViewModel\ContactpersonenVM.cs" />
+    <Compile Include="ViewModel\ContactpersoonFormVM.cs" />
+    <Compile Include="ViewModel\ContactpersoonTypeFormVM.cs" />
     <Compile Include="ViewModel\FestivalVM.cs" />
+    <Compile Include="ViewModel\GenreFormVM.cs" />
     <Compile Include="ViewModel\IPage.cs" />
     <Compile Include="ViewModel\LineUpVM.cs" />
     <Compile Include="ViewModel\ObservableObject.cs" />
+    <Compile Include="View\BandForm.xaml.cs">
+      <DependentUpon>BandForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactpersoonForm.xaml.cs">
+      <DependentUpon>ContactpersoonForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactpersoonTypeForm.xaml.cs">
+      <DependentUpon>ContactpersoonTypeForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\GenreForm.xaml.cs">
+      <DependentUpon>GenreForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Tickets.xaml.cs">
       <DependentUpon>Tickets.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\BandForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Bands.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,7 +108,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ContactpersoonForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ContactpersoonTypeForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Festival.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\GenreForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,7 +185,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\GeenAfb.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
