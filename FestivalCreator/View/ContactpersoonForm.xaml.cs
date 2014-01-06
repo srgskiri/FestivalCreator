@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace FestivalCreator.View
 {
     /// <summary>
-    /// Interaction logic for Contactpersonen.xaml
+    /// Interaction logic for ContactpersoonForm.xaml
     /// </summary>
-    public partial class Contactpersonen : UserControl
+    public partial class ContactpersoonForm : UserControl
     {
-        public Contactpersonen()
+        public ContactpersoonForm()
         {
             InitializeComponent();
         }
-
     }
 }

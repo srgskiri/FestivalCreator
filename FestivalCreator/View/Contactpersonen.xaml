@@ -2,81 +2,74 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:m="clr-namespace:FestivalCreator.Model"
+             xmlns:vm="clr-namespace:FestivalCreator.ViewModel"
+             xmlns:v="clr-namespace:FestivalCreator.View"
              Height="527" Width="1016">
-    <Grid Background="Bisque" Margin="2,0,-2,0">
-        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="320" FontWeight="Bold" FontSize="42" FontFamily="Source Sans Pro"><Run Language="nl-be" Text="Contactpersonen"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="206,91,0,0" TextWrapping="Wrap" Text="Gert-Jan" VerticalAlignment="Top" Width="170" FontSize="18" FontFamily="Ubuntu"/>
-        <Button Content="Nieuw persoon" HorizontalAlignment="Left" Margin="15,480,0,0" VerticalAlignment="Top" Width="170" FontSize="18" FontFamily="Ubuntu" Height="24"/>
-        <ListBox HorizontalAlignment="Left" Height="378" Margin="206,135,0,0" VerticalAlignment="Top" Width="320" FontFamily="Ubuntu" FontSize="18">
-            <ListBoxItem Content="Sponsor     Van Assche Gert-Jan "/>
-        </ListBox>
-        <CheckBox Content="Interim" HorizontalAlignment="Left" Margin="34,96,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Podium" HorizontalAlignment="Left" Margin="34,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Voeding" HorizontalAlignment="Left" Margin="35,196,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Medewerker" HorizontalAlignment="Left" Margin="42,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Bewaking" HorizontalAlignment="Left" Margin="38,296,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Sponsor" HorizontalAlignment="Left" Margin="35,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
-        <CheckBox Content="Klank &amp; Geluid" HorizontalAlignment="Left" Margin="45,396,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14" Checked="CheckBox_Checked">
-            <CheckBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
-                </TransformGroup>
-            </CheckBox.RenderTransform>
-        </CheckBox>
 
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="693,142,0,0" TextWrapping="Wrap" Text="Van Assche" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,142,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Naam:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="693,188,0,0" TextWrapping="Wrap" Text="Gert-Jan" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,188,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Voornaam:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="693,232,0,0" TextWrapping="Wrap" Text="Digi &amp; co" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,232,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Bedrijf:"/></TextBlock>
-        <ComboBox HorizontalAlignment="Left" Height="22" Margin="693,278,0,0" Text="Reggae Geel" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,278,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Functie:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="693,322,0,0" TextWrapping="Wrap" Text="Gent" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,322,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Stad:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="693,368,0,0" TextWrapping="Wrap" Text="AsscheGJ@digico.be" VerticalAlignment="Top" Width="240" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,368,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Email:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="24" Margin="693,412,0,0" TextWrapping="Wrap" Text="090332312" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,412,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="Telefoon:"/></TextBlock>
-        <TextBox HorizontalAlignment="Left" Height="22" Margin="693,458,0,0" TextWrapping="Wrap" Text="0495876544" VerticalAlignment="Top" Width="159" FontSize="18" FontFamily="Ubuntu"/>
-        <TextBlock HorizontalAlignment="Left" Margin="575,458,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="98" Height="28" FontSize="22"><Run Language="nl-be" Text="GSM:"/></TextBlock>
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type vm:ContactpersoonFormVM}">
+            <v:ContactpersoonForm/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ContactpersoonTypeFormVM}">
+            <v:ContactpersoonTypeForm/>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="Bisque" Margin="2,0,-2,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="452*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="184*"/>
+            <ColumnDefinition Width="155*"/>
+        </Grid.ColumnDefinitions>
+
+        
+        <ItemsControl ItemsSource="{Binding Pages}" Grid.Column="1">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button Width="100" Height="35" Margin="9,18,9,18" Content="{Binding Name}" Command="{Binding DataContext.ChangePageItemCommand, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}" CommandParameter="{Binding}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+        <ContentControl Grid.Row="1" Grid.Column="1" Content="{Binding CurrentPage}"/>
+        
+        <ItemsControl ItemsSource="{Binding ContactpersoonTypes}" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Naam}" 
+                              Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type v:Contactpersonen}}, 
+                                        Path=DataContext.CheckBoxChangedCommand}"
+                              CommandParameter="{Binding Naam}" Margin="32,12,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontFamily="Ubuntu" FontSize="14">
+                        <CheckBox.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                            </TransformGroup>
+                        </CheckBox.RenderTransform>
+                    </CheckBox>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        
+
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="50" Width="320" FontWeight="Bold" FontSize="42" FontFamily="Source Sans Pro"><Run Language="nl-be" Text="Contactpersonen"/></TextBlock>
+
+        <TextBlock HorizontalAlignment="Left" Margin="276,21,0,0" VerticalAlignment="Top" FontFamily="Tw Cen MT" Width="54" Height="28" FontSize="22" Text="Zoek:" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="24" Margin="356,21,0,0" TextWrapping="Wrap" Text="{Binding ZoekString, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="170" FontSize="18" FontFamily="Ubuntu" Grid.Row="1"/>
+
+        <Button Command="{Binding AddContactpersonCommand}" Content="Nieuw persoon" HorizontalAlignment="Left" Margin="16,414,0,0" VerticalAlignment="Top" Width="170" FontSize="18" FontFamily="Ubuntu" Height="24" Grid.Row="1"/>
+        <ListBox ItemsSource="{Binding ZichtbareContactpersonen}" SelectedItem="{Binding SelectedContactpersoon}" DisplayMemberPath="Weergave"  HorizontalAlignment="Left" Height="378" Margin="206,60,0,0" VerticalAlignment="Top" Width="320" FontFamily="Ubuntu" FontSize="18" Grid.Row="1"/>
+
+        
 
     </Grid>
 
