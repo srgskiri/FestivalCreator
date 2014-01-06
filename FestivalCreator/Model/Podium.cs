@@ -12,14 +12,21 @@ namespace FestivalCreator.Model
     class Podium
     {
         public string ID { get; set; }
-        public string Naam { get; set; }
+
+        private string _naam;
+
+        public string Naam
+        {
+            get { return _naam; }
+            set { _naam = value.Trim(); }
+        }
 
         private string _beschrijving;
 
         public string Beschrijving
         {
             get { return _beschrijving; }
-            set { _beschrijving = value; }
+            set { _beschrijving = value.Trim(); }
         }
 
         public static ObservableCollection<Podium> GetPodia()
@@ -40,6 +47,7 @@ namespace FestivalCreator.Model
                 podia.Add(podium);
             }
 
+            reader.Close();
             return podia;
         }
 
